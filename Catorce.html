@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa Interactivo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: pink;
+    }
+    .container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #inicio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #inicio button {
+        margin: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    img {
+        max-width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="inicio">
+        <h1>Hola! ¿Cómo estás?</h1>
+        <img src="catkiss.gif" alt="">
+        <div>
+            <button onclick="bien()">Bien</button>
+            <button onclick="mal()">Mal</button>
+        </div>
+    </div>
+    <div id="respuesta" style="display: none;">
+        <p id="mensaje"></p>
+        <div id="opciones" style="display: none;">
+            <button id="siBtn" onclick="si()">Sí</button>
+            <button id="noBtn" onclick="no()">No</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function bien() {
+        document.getElementById('mensaje').innerText = 'Hoy es un día especial, ¿sabes por qué?';
+        document.getElementById('inicio').style.display = 'none'; // Ocultar el saludo inicial y los botones
+        document.getElementById('respuesta').style.display = 'block';
+        document.getElementById('opciones').style.display = 'block';
+        // Configurar los botones para la respuesta de "bien"
+        document.getElementById('siBtn').setAttribute('onclick', 'window.open("pagina_b.html")'); // Abrir una página en blanco al hacer clic en "Sí"
+        document.getElementById('noBtn').setAttribute('onclick', 'window.open("NoSabes_imagen.html", "_self")'); // Abrir una página para insertar imagen al hacer clic en "No"
+    }
+
+    function mal() {
+        document.getElementById('mensaje').innerText = 'Tienes que recordar que, eres el curita en mi corazón, las cosas mejorarán y todo saldrá mejor, si no mejora es porque aún no es el final, ¿Quieres ver algo?';
+        document.getElementById('inicio').style.display = 'none'; // Ocultar el saludo inicial y los botones
+        document.getElementById('respuesta').style.display = 'block';
+        document.getElementById('opciones').style.display = 'block';
+        // Configurar los botones para la respuesta de "mal"
+        document.getElementById('siBtn').setAttribute('onclick', 'window.open("pagina_b.html", "_blank")'); // Abrir una página en blanco al hacer clic en "Sí"
+        document.getElementById('noBtn').setAttribute('onclick', 'window.open("Triste_imagen.html", "_self")'); // Abrir una página para insertar imagen al hacer clic en "No"
+    }
+
+    function si() {
+        // Esta función será llamada solo si el comportamiento de los botones se establece correctamente en bien() o mal()
+        // Dependiendo de la opción seleccionada, puede abrir una página en blanco o no hacer nada
+    }
+
+    function no() {
+        // Esta función será llamada solo si el comportamiento de los botones se establece correctamente en bien() o mal()
+        // Dependiendo de la opción seleccionada, puede abrir una página para insertar imagen o no hacer nada
+    }
+</script>
+</body>
+</html>

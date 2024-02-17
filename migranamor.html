@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tuyyo</title>
+  <style>
+    .body {
+      background-color: rgb(245, 105, 128);
+      text-align: center;
+    }
+
+    .body__title {
+      color: white;
+    }
+
+    .body__img {
+      width: 100%;
+      max-width: 512px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body class="body">
+  <h1 class="body__title">♥¿Puedo ser tu gran amor?♥</h1>
+  <img src="yomero.jpg" alt="yo" class="body__img" />
+  <br>
+  <button id="yes">Si💞</button>
+  <button id="no">no :c</button>
+
+  <script>
+    const vuttonSi = document.getElementById('yes');
+    const vuttonNo = document.getElementById('no');
+
+    const sidijo = () => {
+      alert('💞Te querré mil vidas más💞');
+      alert('Eres el curita de mi corazón');
+      alert('El amor que siempre esperé');
+      alert('Te amo');
+      location.href = 'https://www.youtube.com/watch?v=PtoVPzALVfM&ab_channel=LosRumberos';
+    };
+
+    const chin = () => {
+      vuttonNo.style.position = 'absolute';
+      vuttonNo.style.top = (Math.random() * window.innerHeight + 'px');
+      vuttonNo.style.left = (Math.random() * window.innerWidth + 'px');
+    };
+
+    vuttonSi.addEventListener('click', sidijo);
+    vuttonNo.addEventListener('mouseover', chin);
+  </script>
+</body>
+
+</html>

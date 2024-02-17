@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EresEspecial</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: pink; /* Establece el color de fondo rosa */
+        /* Agrega otros estilos si es necesario */
+    }
+</style>
+</head>
+<body>
+    <h1>La verdad es que, estoy enamorado de ti</h1>
+    <h2>Tengo que confesarte que me gustas más que la primera vez que te hablé</h2>
+    <h2>¿Quieres ver algo más?</h2>
+    <h3>Tienes que regresar a esta pagina si le das a si</h3>
+    <img src="yo.png" alt="">
+    <button onclick="verVideo()">Sí</button>
+
+    <script>
+        function verVideo() {
+            window.open('https://www.youtube.com/watch?v=bWstdDuh1ic&ab_channel=LosRumberos', '_blank');
+            var boton = document.createElement("button");
+            boton.textContent = "Sorpresa simultanea";
+            boton.onclick = function() {
+                window.open('migranamor.html', '_blank');
+            };
+            document.body.appendChild(boton);
+        }
+    </script>
+</body>
+</html>
+
